@@ -6,8 +6,8 @@
 from typing import List, Optional, Tuple
 
 from connect.eaas.core.responses import BackgroundResponse
-from rndi.connect_business_transactions.exceptions import TransactionException
-from rndi.connect_business_transactions.contracts import (
+from rndi.connect.business_transactions.exceptions import TransactionException
+from rndi.connect.business_transactions.contracts import (
     AnyBackgroundTransaction,
     BackgroundTransaction,
     FnBackgroundCompensation,

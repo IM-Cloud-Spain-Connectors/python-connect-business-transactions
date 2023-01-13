@@ -35,7 +35,7 @@ The usage of the contract is quite easy, you just need to import it, extend it, 
 
 ```python
 from connect.eaas.core.responses import BackgroundResponse
-from rndi.connect_business_transactions.contracts import BackgroundTransaction
+from rndi.connect.business_transactions.contracts import BackgroundTransaction
 
 
 class ApproveRequest(BackgroundTransaction):
@@ -71,7 +71,7 @@ Once you have the transaction stack you can use the transaction selector to get 
 given request:
 
 ```python
-from rndi.connect_business_transactions.adapters import TransactionSelector
+from rndi.connect.business_transactions import TransactionSelector
 
 transactions = [
     ApproveRequest(client, config, logger)
@@ -87,7 +87,7 @@ response = selected_transaction(request)
 Alternatively, you can use a functional approach to select and prepare the transaction:
 
 ```python
-from rndi.connect_business_transactions.adapters import prepare, select
+from rndi.connect.business_transactions import prepare, select
 
 transactions = [
     ApproveRequest(client, config, logger)

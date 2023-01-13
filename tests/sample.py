@@ -2,7 +2,7 @@ from typing import Callable, Optional
 
 from connect.eaas.core.responses import BackgroundResponse
 
-from rndi.connect_business_transactions.contracts import BackgroundTransaction
+from rndi.connect.business_transactions.contracts import BackgroundTransaction
 
 
 class CreateCustomer(BackgroundTransaction):

@@ -1,8 +1,8 @@
 import pytest
 from connect.eaas.core.responses import BackgroundResponse
 
-from rndi.connect_business_transactions.adapters import TransactionSelector
-from rndi.connect_business_transactions.exceptions import InvalidTransaction, TransactionNotSelected
+from rndi.connect.business_transactions.adapters import TransactionSelector
+from rndi.connect.business_transactions.exceptions import InvalidTransaction, TransactionNotSelected
 from tests.sample import (
     ApproveRequest,
     CreateCustomer,
