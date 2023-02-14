@@ -1,7 +1,6 @@
 from typing import Callable, Optional
 
 from connect.eaas.core.responses import BackgroundResponse
-
 from rndi.connect.business_transactions.contracts import BackgroundTransaction
 
 
@@ -32,6 +31,7 @@ def should_create_subscription(request: dict) -> bool:
 
 
 CREATE_SUBSCRIPTION = 'Create Subscription'
+
 
 def create_subscription(_: dict) -> BackgroundResponse:
     return BackgroundResponse.done()

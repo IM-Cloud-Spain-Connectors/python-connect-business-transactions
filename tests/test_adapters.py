@@ -1,16 +1,15 @@
 import pytest
 from connect.eaas.core.responses import BackgroundResponse
-
 from rndi.connect.business_transactions.adapters import TransactionSelector
 from rndi.connect.business_transactions.exceptions import InvalidTransaction, TransactionNotSelected
 from tests.sample import (
     ApproveRequest,
-    CreateCustomer,
-    create_subscription,
-    should_create_subscription,
-    create_subscription_with_exception,
-    create_subscription_compensate,
     CREATE_SUBSCRIPTION,
+    create_subscription,
+    create_subscription_compensate,
+    create_subscription_with_exception,
+    CreateCustomer,
+    should_create_subscription,
 )
 
 
@@ -19,8 +18,8 @@ def test_transaction_selector_should_select_transaction_and_success_execution_fo
         'status': 'pending',
         'params': [
             {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'},
-            {'id': 'PARAM_SUBS_ID', 'value': 'bc180aa9-4a41-4c5e-ad0d-656f1dc0c6d9'}
-        ]
+            {'id': 'PARAM_SUBS_ID', 'value': 'bc180aa9-4a41-4c5e-ad0d-656f1dc0c6d9'},
+        ],
     }
 
     def assert_correct_transaction(name: str):
@@ -43,8 +42,8 @@ def test_transaction_selector_should_select_transaction_and_fail_execution_for_c
         'status': 'pending',
         'params': [
             {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'},
-            {'id': 'PARAM_SUBS_ID', 'value': 'bc180aa9-4a41-4c5e-ad0d-656f1dc0c6d9'}
-        ]
+            {'id': 'PARAM_SUBS_ID', 'value': 'bc180aa9-4a41-4c5e-ad0d-656f1dc0c6d9'},
+        ],
     }
 
     def assert_correct_transaction(name: str):
@@ -67,8 +66,8 @@ def test_transaction_selector_should_select_transaction_and_success_execution_fo
         'status': 'pending',
         'params': [
             {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'},
-            {'id': 'PARAM_SUBS_ID'}
-        ]
+            {'id': 'PARAM_SUBS_ID'},
+        ],
     }
 
     ts = TransactionSelector([
@@ -87,8 +86,8 @@ def test_transaction_selector_should_select_transaction_and_fail_execution_for_f
         'status': 'pending',
         'params': [
             {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'},
-            {'id': 'PARAM_SUBS_ID'}
-        ]
+            {'id': 'PARAM_SUBS_ID'},
+        ],
     }
 
     ts = TransactionSelector([
@@ -109,8 +108,8 @@ def test_transaction_selector_should_select_transaction_and_fail_execution_for_f
         'status': 'pending',
         'params': [
             {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'},
-            {'id': 'PARAM_SUBS_ID'}
-        ]
+            {'id': 'PARAM_SUBS_ID'},
+        ],
     }
 
     ts = TransactionSelector([
@@ -129,8 +128,8 @@ def test_transaction_selector_should_raise_exception_on_invalid_transaction():
     request = {
         'status': 'pending',
         'params': [
-            {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'}
-        ]
+            {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'},
+        ],
     }
 
     ts = TransactionSelector([CreateCustomer])
@@ -143,8 +142,8 @@ def test_transaction_selector_should_raise_exception_on_transaction_not_selected
     request = {
         'status': 'pending',
         'params': [
-            {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'}
-        ]
+            {'id': 'PARAM_CUSTOMER_ID', 'value': 'eda1b4f1-a3a8-4a87-bd3f-ad71f6c2e93e'},
+        ],
     }
 
     ts = TransactionSelector([])
