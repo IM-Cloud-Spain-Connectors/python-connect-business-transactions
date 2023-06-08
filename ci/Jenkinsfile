@@ -10,7 +10,7 @@ def environment = [
 
     PROJECT_NAME: "rndi-connect-business-transactions",
 
-    SONAR_FILES_SOURCE: "cron_processor.py,service.py,app/",
+    SONAR_FILES_SOURCE: "rndi/",
     SONAR_FILES_TEST: "tests/",
     SONAR_FILES_EXCLUDED: "",
 
