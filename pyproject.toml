@@ -32,7 +32,7 @@ keywords = [
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4"
-connect-eaas-core = "^27.0"
+connect-eaas-core = ">=28.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.2.0"
